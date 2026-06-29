@@ -1,0 +1,52 @@
+const studenti = [
+    { ime: "Bojan", prosek: 7.5, grad: "Skopje" },
+    { ime: "Pero", prosek: 8.3, grad: "Bitola" },
+    { ime: "Janko", prosek: 6.9, grad: "Bitola" },
+    { ime: "Vesna", prosek: 9.2, grad: "Skopje" },
+    { ime: "Elena", prosek: 9.9, grad: "Kumanovo" },
+    { ime: "Vancho", prosek: 10, grad: "Tetovo" },
+    { ime: "Elena", prosek: 9.9, grad: "Ohrid" },
+    { ime: "Ivana", prosek: 6.9, grad: "Kumanovo" },
+    { ime: "Natasha", prosek: 8.1, grad: "Skopje" },
+    { ime: "Stanko", prosek: 7.2, grad: "Strumica" },
+];
+
+// 1. Studenti od Skopje, ime zavrsuva na 'a', prosek > 7, podredeni po ime ASC
+const zad1 = studenti
+  .filter(s => s.grad === "Skopje" && s.ime.endsWith("a") && s.prosek > 7)
+  .sort((a, b) => a.ime.localeCompare(b.ime));
+console.log("Zadaca 1:", zad1);
+
+// 2. Studenti so prosek > 9, ne od Skopje, podredeni po prosek DESC
+const zad2 = studenti
+  .filter(s => s.grad !== "Skopje" && s.prosek > 9)
+  .sort((a, b) => b.prosek - a.prosek);
+console.log("Zadaca 2:", zad2);
+
+// 3. Prvite 3 studenti so iminja od 5 karakteri, podredeni po prosek ASC
+const zad3 = studenti
+  .filter(s => s.ime.length === 5)
+  .sort((a, b) => a.prosek - b.prosek)
+  .slice(0, 3);
+console.log("Zadaca 3:", zad3);
+
+// 4. Gradovite podredeni spored proseci na studentite
+const gradoviMap = {};
+studenti.forEach(s => {
+  if (!gradoviMap[s.grad]) gradoviMap[s.grad] = [];
+  gradoviMap[s.grad].push(s.prosek);
+});
+
+const zad4 = Object.entries(gradoviMap)
+  .map(([grad, proseci]) => ({
+    grad,
+    avg: proseci.reduce((a, b) => a + b, 0) / proseci.length
+  }))
+  .sort((a, b) => a.avg - b.avg);
+console.log("Zadaca 4:", zad4);
+
+// 5. Vkupen prosek na studenti so ime zavrsuva na 'a'
+const soA = studenti.filter(s => s.ime.endsWith("a"));
+const prosekA = soA.reduce((a, b) => a + b.prosek, 0) / soA.length;
+console.log("Prosek na iminja so 'a':", prosekA);
+
