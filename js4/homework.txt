@@ -1,0 +1,3 @@
+Zdravo od Node.js!
+Dodadeno so append!
+Uste eden red!
