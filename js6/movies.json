@@ -40,11 +40,6 @@
     "year": 2000
   },
   {
-    "id": 10,
-    "name": "Titanic (Remastered)",
-    "year": 1997
-  },
-  {
     "name": "Avatar",
     "year": 2009,
     "id": 11
@@ -58,5 +53,20 @@
     "name": "Avatar",
     "year": 2009,
     "id": 13
+  },
+  {
+    "name": "Avatar",
+    "year": 2009,
+    "id": 14
+  },
+  {
+    "name": "Avatar",
+    "year": 2009,
+    "id": 15
+  },
+  {
+    "name": "Avatar",
+    "year": 2009,
+    "id": 16
   }
 ]

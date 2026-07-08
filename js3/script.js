@@ -1,9 +1,5 @@
 // 1. Core module (fs)
 const fs = require("fs");
-// 2. Local module
-const sayHello = require("./hello");
-sayHello();
-
 fs.writeFile("homework.txt", "Zdravo od Node.js!", (err) => {
   if (err) {
     console.log("Greska pri zapisuvanje:", err);
@@ -11,6 +7,10 @@ fs.writeFile("homework.txt", "Zdravo od Node.js!", (err) => {
     console.log("Fajlot e uspesno zapisan!");
   }
 });
+// 2. Local module
+const sayHello = require("./hello");
+sayHello();
+
 // 3. 
 const chalk = require("chalk");
 

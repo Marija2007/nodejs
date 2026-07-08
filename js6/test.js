@@ -11,7 +11,7 @@ console.log("All movies:", moviesCrud.getAllMovies(file));
 console.log("Movie with ID 4:", moviesCrud.getMovieById(file, 4)); // The Dark Knight
 
 // Remove movie by id
-moviesCrud.removeMovieById(file, 6); // Removes Pulp Fiction
+moviesCrud.removeMovieById(file, 10); // Removes Pulp Fiction
 
 // Edit movie by id
 moviesCrud.editMovieById(file, 10, { name: "Titanic (Remastered)", year: 1997 });
