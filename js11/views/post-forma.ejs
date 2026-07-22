@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+  <meta charset="UTF-8">
+  <title>Rezultati od analiza</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; }
+    textarea { width: 100%; height: 150px; font-size: 16px; padding: 10px; box-sizing: border-box; }
+    button { margin-top: 10px; padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    .rezultati { margin-top: 30px; background: #f4f4f4; padding: 20px; border-radius: 8px; }
+    .rezultati p { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <h1>Analiza na tekst</h1>
+
+  <form action="/analiza" method="POST">
+    <textarea name="tekst"><%= tekst %></textarea>
+    <br>
+    <button type="submit">Analiziraj</button>
+  </form>
+
+  <div class="rezultati">
+    <h2>Rezultati:</h2>
+    <p><strong>Vkupen broj na karakteri:</strong> <%= rezultati.brojKarakteri %></p>
+    <p><strong>Vkupen broj na zborovi:</strong> <%= rezultati.brojZborovi %></p>
+    <p><strong>Zborovi pomali od 5 karakteri:</strong> <%= rezultati.zboroviPomali %></p>
+    <p><strong>Zborovi pogolemi od 5 karakteri:</strong> <%= rezultati.zboroviPogolemi %></p>
+    <p><strong>Zborovi ednakvi na 5 karakteri:</strong> <%= rezultati.zboroviEdnakvi %></p>
+    <p><strong>Vkupen broj na paragrafi:</strong> <%= rezultati.brojParagrafi %></p>
+    <p><strong>BONUS - zborovi na a/o/u/i/e:</strong> <%= rezultati.brojSoSamoglaska %></p>
+  </div>
+</body>
+</html>
